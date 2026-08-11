@@ -1,10 +1,24 @@
+import argparse
 from pathlib import Path
 
 from .scanner import find_source_files
 from .analyzer import analyze_source_files
 
 def main():
-    project_path = Path("D:/UE Projects/Xtreme")
+
+    parser = argparse.ArgumentParser(
+        description="Analyze a Unreal Engine C++ codebase"
+    )
+
+    parser.add_argument(
+        "project_path",
+        type=Path,
+        help="Path to the project to analyze"
+    )
+
+    args = parser.parse_args()
+
+    project_path = args.project_path
 
     source_files = find_source_files(project_path)
 
