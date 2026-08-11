@@ -1,0 +1,8 @@
+[project]
+name = "ai-codebase-agent"
+version = "0.1.0"
+description = "An AI agent for analyzing codebases"
+requires-python = ">=3.14"
+
+[project.scripts]
+ai-codebase-analyze = "ai_codebase_analyzer.cli:main"
