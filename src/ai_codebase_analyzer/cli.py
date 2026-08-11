@@ -8,6 +8,8 @@ def main():
 
     source_files = find_source_files(project_path)
 
-    print(f"Found {len(source_files)} files")
+    stats = analyze_source_files(source_files)
 
-    analyze_source_files(source_files)
+    print(f"Total source files: {stats.total_source_files}")
+    print(f"Total USTRUCTs: {stats.total_ustructs}")
+    print(f"Total UCLASSes: {stats.total_uclasses}")
