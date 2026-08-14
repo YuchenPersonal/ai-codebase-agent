@@ -7,12 +7,12 @@ def find_source_files(project_path: Path) -> list[Path]:
         print("The project path does NOT exist")
         return source_files
 
-    for item in project_path.rglob("*"):
+    for path in project_path.rglob("*"):
         if (
-            item.is_file() and 
-            item.suffix in [".cpp", ".h"] and 
-            "intermediate" not in str(item).lower()
+            path.is_file() and 
+            path.suffix in [".cpp", ".h"] and 
+            "intermediate" not in str(path).lower()
         ):
-            source_files.append(item)
+            source_files.append(path)
 
     return source_files
